@@ -1,14 +1,9 @@
 package com.example.demo;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class UserEntity {
     private Long id;
     private String name;
 
-    public UserEntity() {
-    }
     public UserEntity(Long id, String name) {
         this.id = id;
         this.name = name;
