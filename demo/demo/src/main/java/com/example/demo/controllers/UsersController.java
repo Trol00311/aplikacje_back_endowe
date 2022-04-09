@@ -14,33 +14,15 @@ public class UsersController {
     @Autowired
     private UsersService usersService;
 
-    @RequestMapping("/users")
-    public String users() {
-        return "users";
-    }
+    private final Map<Integer, UserEntity> mapUser = new HashMap<>(Map.of(1, new UserEntity(1, "Tom"), 2, new UserEntity(2, "John")));
 
-    @RequestMapping("/api/users")
-    @ResponseBody
-    public String getApiUsers() {
-        return this.usersService.getUsers();
-    }
-
-    @RequestMapping("/api/users/{id}")
-    @ResponseBody
-    public String getApiUser(
-            @PathVariable long id
-    ) {
-        return "User ID: " + id;
-    }
-
-    private final Map<Integer, UserEntity> mapUser = new HashMap<>(Map.of(1, new UserEntity(1L, "Tom"), 2, new UserEntity(2L, "John")));
-
-
+    //http://localhost:85/users/all
     @GetMapping("/users/all")
     public ResponseEntity<Collection<UserEntity>> getApiUser2() {
         return ResponseEntity.ok(mapUser.values());
     }
 
+    //http://localhost:85/users/3/get
     @RequestMapping("/users/{id}/get")
     @ResponseBody
     public ResponseEntity<UserEntity> getAddUsers(
@@ -48,12 +30,26 @@ public class UsersController {
     ) {
         return ResponseEntity.of(Optional.ofNullable(mapUser.get(id)));
     }
+    //http://localhost:85/users/2/remove
     @RequestMapping("/users/{id}/remove")
     @ResponseBody
-    public ResponseEntity<UserEntity> getRemoveUsers(
+    public ResponseEntity<UserEntity> GetRemoveAddUsers(
             @PathVariable("id") int id
     ) {
         return ResponseEntity.of(Optional.ofNullable(mapUser.remove(id)));
     }
-}
 
+    //localhost:85/users/add?nazwa=Jan
+    @RequestMapping("/users/add")
+    @ResponseBody
+    public ResponseEntity<UserEntity> ApiAddUser
+            (@RequestParam String nazwa
+             ) {
+        Integer id = mapUser.size() + 1;
+        UserEntity newUser = new UserEntity(id, nazwa);
+        mapUser.put(id, newUser);
+
+        return ResponseEntity.of(Optional.ofNullable(mapUser.put(id, newUser)));
+
+    }
+}

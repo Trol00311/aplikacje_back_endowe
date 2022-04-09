@@ -16,18 +16,6 @@ public class HomeController {
         return "Hello World!";
     }
 
-    //http://localhost:85/test2/Jan?age=20&test=true
-    @RequestMapping("/test2/{nazwa}")
-    @ResponseBody
-    public String index2(
-            @PathVariable String nazwa,
-            @RequestParam Integer age,
-            @RequestParam Boolean test
-
-    ) {
-        return "Hi " + nazwa + "!" + " age" + age+" test:"+test;
-    }
-
     //http://localhost:85/templates
     @RequestMapping("/templates")
     public String template() {

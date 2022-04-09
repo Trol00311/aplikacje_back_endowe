@@ -1,19 +1,19 @@
 package com.example.demo;
 
 public class UserEntity {
-    private Long id;
+    private int id;
     private String name;
 
-    public UserEntity(Long id, String name) {
+    public UserEntity(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
