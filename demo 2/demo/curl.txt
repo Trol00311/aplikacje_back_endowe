@@ -1,0 +1,10 @@
+GET:
+    $ curl 'http://localhost:8080/api/users'
+    $ curl 'http://localhost:8080/api/users?page-size=100'
+POST:
+    $ curl -X POST 'http://localhost:8080/api/users/create' -H 'Content-Type: application/json' -d '{"name": "newUser", "age": "123"}'
+    $ curl 'http://localhost:8080/api/users/7/get'
+PUT:
+    $ curl -X PUT 'http://localhost:8080/api/users/7/update' -H 'Content-Type: application/json' -d '{"name": "updatedUser", "age": 234}'
+DELETE:
+    $ curl -X DELETE 'http://localhost:8080/api/users/7/remove'

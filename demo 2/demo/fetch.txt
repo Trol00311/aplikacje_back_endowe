@@ -1,0 +1,36 @@
+wyświetlanie
+await fetch("http://localhost:8080/api/users/")
+  .then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+# page size
+await fetch("http://localhost:8080/api/users?page-size=100")
+  .then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+dodawanie
+await fetch("http://localhost:8080/api/users/create", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({"name": "newUser", "age": 123456})})
+  .then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+# pobranie
+await fetch("http://localhost:8080/api/users/7/get/")
+  .then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+aktualizacja
+await fetch("http://localhost:8080/api/users/7/update", {method: "PUT", headers: {"Content-Type": "application/json"}, body: JSON.stringify({"name": "newUserUPDATED", "age": 9999999})})
+  .then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+
+usuwanie
+await fetch("http://localhost:8080/api/users/7/remove/", {method: "DELETE"})
+  .then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
