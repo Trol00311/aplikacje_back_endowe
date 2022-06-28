@@ -11,8 +11,8 @@ app.use(cors());
 
 app.use("/", userRoutes);
 
-app.get("/", (req, resp) => resp.send("Hello"));
-app.all("*", (req, resp) => resp.send("Nie ma takiego zapytania"));
+app.get("/", (req, resp) => resp.send("Hello from express"));
+app.all("*", (req, resp) => resp.send("that route dosen't exist"));
 
 
 app.listen(port, () =>
