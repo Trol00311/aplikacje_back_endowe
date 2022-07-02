@@ -75,7 +75,7 @@ const About = () => {
           value={text}
         />
 
-        <input type="submit" value="Add" />
+        <input type="submit" value="Dodaj" />
 
         {data &&
           data.map((item, index) => {
