@@ -4,7 +4,7 @@ import cors from "cors";
 import api from "./rout.js";
 
 const application = express();
-const port = 3000;
+const port = 5000;
 
 application.use(bodyParser.json());
 application.use(cors());
