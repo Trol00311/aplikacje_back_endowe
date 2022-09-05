@@ -1,51 +1,22 @@
 p {
-  font-size: 1.6rem;
-  color: #ec0a0a;
+  font-size: 30px;
+  color: #7037da;
   text-align: center;
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 76px;
   text-align: center;
 }
 
 
-.app .search {
+.search {
   text-align: center;
 }
 
 .app input {
-  padding: .7rem 1.5rem;
-  font-size: 1.2rem;
-  border-radius: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  color: #ec0a0a;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 15px;
+  color: #888888;
 }
-
-::placeholder {
-  color: #747474;
-}
-
-.container {
-  max-width: 700px;
-  height: 700px;
-  margin: auto;
-  position: relative;
-  top: 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-

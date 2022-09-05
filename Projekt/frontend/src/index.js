@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './weather';
+import report from "./report"
+import Login from './login';
 
 
-ReactDOM.render(
+const admin = ReactDOM.createRoot(document.getElementById("root"));
+admin.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <Login />
+  </React.StrictMode>
 );
 
+
+report();
