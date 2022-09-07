@@ -1,0 +1,11 @@
+.cytat{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: #098005;
+}
+
+.cytatLosowy{
+    background-color:rgb(230, 230, 230) ;
+    padding: 150px;
+}

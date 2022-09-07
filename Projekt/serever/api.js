@@ -54,7 +54,7 @@ export const addUser =(pyt,res)=>{
 //wyświetlenie jednego użytkownika
 export const getUser=(pyt,res)=>{
   data.getConnection((er,con)=>{
-    con.query('Select * from user where email = ?'[pyt.par.email],(er,odp)=>{
+    con.query('Select * from user where email = ?'[pyt.params.email],(er,odp)=>{
      con.release()
       res.send(rows)
     })
@@ -64,7 +64,7 @@ export const getUser=(pyt,res)=>{
 //usuniecie użytkownika
 export const deleteUser=(pyt,res)=>{
   data.getConnection((er,con)=>{
-    con.query('Delete from users where email = ?' ,[pyt.par.email], (er,odp)=>{
+    con.query('Delete from users where email = ?' ,[pyt.params.email], (er,odp)=>{
       con.release();
     })
   })
@@ -91,5 +91,21 @@ export const login = (req, res) => {
         
       }
     })
+  })
+};
+
+//jeden cytat
+export const getCytat = (pyt, res) => {
+  data.getConnection((er, con) => {
+    con.query('SELECT tekst from cytaty Where Id = ?', [pyt.params.id], (er, odp) => {
+      con.release()
+
+      if (!er) {
+        res.send(odp)
+      } else {
+        console.log(er)
+      }
+    })
+
   })
 };

@@ -32,7 +32,7 @@ const App=() =>{
       </div>
 
           <div className="location">
-            <p>{api.name}</p>
+            <p className='p'>{api.name}</p>
           </div>
           <div className="temp">
             {api.main ? <h1>{Math.round(api.main.temp.toFixed()/3.7)+"°C"}</h1> : null}
