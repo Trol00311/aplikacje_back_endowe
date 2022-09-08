@@ -4,6 +4,7 @@ import Register from "./register";
 import Login from "./login";
 import Weather from "./weather";
 import Quote from "./quote";
+import Czat from "./czat";
 
 function web() {
   return (
@@ -14,6 +15,7 @@ function web() {
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/weather" element={<Weather />} />
         <Route exact path="/cytat" element={<Quote />} />
+        <Route exact path="/czat" element={<Czat />}/>
       </Routes>
     </Router>
   );

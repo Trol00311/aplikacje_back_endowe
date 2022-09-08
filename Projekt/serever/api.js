@@ -109,3 +109,33 @@ export const getCytat = (pyt, res) => {
 
   })
 };
+
+//caly czat
+export const czat =(pyt,res) =>{
+  data.getConnection((er,con)=>{
+    con.query(`Select * from czat order by id desc LIMIT 5`,(er,odp)=>{
+      con.release();
+      if (!er) {
+        res.send(odp)
+      } else {
+        console.log(er)
+      }
+    })
+  })
+};
+
+//dodaj wiadomosc
+export const addCzat = (pyt, res) => {
+  data.getConnection((er, con) => {
+    const params = pyt.body
+    con.query('INSERT INTO czat SET ?', params, (er, odp) => {
+      con.release()
+      if (!er) {
+        res.send(`Wiadomosc dodana`)
+      } else {
+        console.log(er)
+      }
+    })
+
+  })
+};

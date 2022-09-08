@@ -1,0 +1,20 @@
+.cytatLosowy{
+    padding: 24px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 15px;
+    min-width: 600px;
+    margin:10px
+   
+  }
+  .wiadomosc{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin-top:0px;
+    padding-top: 5px;
+  }
+.osoba{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin-top:0px;
+  
+}
