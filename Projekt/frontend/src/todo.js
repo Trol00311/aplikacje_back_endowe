@@ -71,7 +71,7 @@ const initialState = {
           czat.map((x, y) => {
             return (
               <div key={y}>
-                <div class='cytatLosowy'>
+                <div class='todo'>
                     <li>{x.task} --- {x.zrobione}
                   <button className="but" onClick={()=> deleteToDo(x.id)}>delete</button>
                   <button className="but" onClick={()=> updateToDo(x.id)}>check</button>

@@ -113,7 +113,7 @@ export const getCytat = (pyt, res) => {
 //caly czat
 export const czat =(pyt,res) =>{
   data.getConnection((er,con)=>{
-    con.query(`Select * from czat order by id desc LIMIT 5`,(er,odp)=>{
+    con.query(`Select * from czat order by id desc LIMIT 4`,(er,odp)=>{
       con.release();
       if (!er) {
         res.send(odp)
@@ -140,6 +140,7 @@ export const addCzat = (pyt, res) => {
   })
 };
 
+//dodanie to do
 export const addTo = (pyt, res) => {
   data.getConnection((er, con) => {
     const params = pyt.body
@@ -155,6 +156,7 @@ export const addTo = (pyt, res) => {
   })
 };
 
+//pokazanie to do
 export const toDo =(pyt,res) =>{
   data.getConnection((er,con)=>{
     con.query(`Select * from to_do`,(er,odp)=>{
@@ -168,6 +170,7 @@ export const toDo =(pyt,res) =>{
   })
 };
 
+//usuniecie to do
 export const deleToDo = (pyt, res) => {
   data.getConnection((err, con) => {
     con.query('DELETE from to_do WHERE id = ?', [pyt.params.id], (er, odp) => {
@@ -182,6 +185,7 @@ export const deleToDo = (pyt, res) => {
   })
 };
 
+// aktualizacja to do
 export const updateToDo = (pyt, res) => {
   data.getConnection((er, con) => {
     console.log(pyt.params.id);
