@@ -139,3 +139,61 @@ export const addCzat = (pyt, res) => {
 
   })
 };
+
+export const addTo = (pyt, res) => {
+  data.getConnection((er, con) => {
+    const params = pyt.body
+    con.query('INSERT INTO to_do SET ?', params, (er, odp) => {
+      con.release()
+      if (!er) {
+        res.send(`to do dodane`)
+      } else {
+        console.log(er)
+      }
+    })
+
+  })
+};
+
+export const toDo =(pyt,res) =>{
+  data.getConnection((er,con)=>{
+    con.query(`Select * from to_do`,(er,odp)=>{
+      con.release();
+      if (!er) {
+        res.send(odp)
+      } else {
+        console.log(er)
+      }
+    })
+  })
+};
+
+export const deleToDo = (pyt, res) => {
+  data.getConnection((err, con) => {
+    con.query('DELETE from to_do WHERE id = ?', [pyt.params.id], (er, odp) => {
+      con.release()
+      if (!er) {
+        res.send(`todo usunięte`)
+      } else {
+        console.log(er)
+      }
+    })
+
+  })
+};
+
+export const updateToDo = (pyt, res) => {
+  data.getConnection((er, con) => {
+    console.log(pyt.params.id);
+    con.query('UPDATE to_do SET zrobione = "zrobione" WHERE Id= ?', [pyt.params.id], (er, odp) => {
+      con.release()
+
+      if (!er) {
+        res.send(`task zrobiony`)
+      } else {
+        console.log(er)
+      }
+    })
+
+  })
+};

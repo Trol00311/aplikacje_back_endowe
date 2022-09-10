@@ -5,6 +5,7 @@ import Login from "./login";
 import Weather from "./weather";
 import Quote from "./quote";
 import Czat from "./czat";
+import ToDo from "./todo"
 
 function web() {
   return (
@@ -16,6 +17,7 @@ function web() {
         <Route exact path="/weather" element={<Weather />} />
         <Route exact path="/cytat" element={<Quote />} />
         <Route exact path="/czat" element={<Czat />}/>
+        <Route exact path="/todo" element={<ToDo />}/>
       </Routes>
     </Router>
   );

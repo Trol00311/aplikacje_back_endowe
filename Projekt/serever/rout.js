@@ -1,5 +1,5 @@
 import express from "express";
-import {addTemp, addUser, deleteUser, getUser, temp, wszyscy,login, getCytat,czat, addCzat} from "./api.js";
+import {addTemp, addUser, deleteUser, getUser, temp, wszyscy,login, getCytat,czat, addTo, addCzat, toDo, deleToDo, updateToDo} from "./api.js";
 
 const router = express.Router();
 
@@ -13,5 +13,9 @@ router.post("/logowanie", login);
 router.get("/cytat/:id", getCytat)
 router.get("/czat", czat)
 router.post("/addCzat", addCzat)
+ router.post("/addTo", addTo)
+router.get("/toDo",toDo)
+router.delete("/deleToDo/:id", deleToDo);
+router.post("/updateToDo/:id",updateToDo)
 
 export default router;
